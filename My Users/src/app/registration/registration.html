@@ -1,0 +1,45 @@
+
+<div class="container" ng-app="myApp" ng-controller="formController">
+  <h1>
+    Registration
+  </h1>
+<form name="myForm" >
+   <div class="form-group">
+     <label for="Username">Username</label>
+     <input type="text" class="form-control" id="username" placeholder="Username">
+   </div>
+   <div class="form-group">
+     <label for="First Name">First Name</label>
+     <input type="text" class="form-control" id="firstname" placeholder="First Name">
+   </div>
+   <div class="form-group">
+     <label for="Last Name">Last Name</label>
+     <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+   </div>
+   <div class="form-group">
+     <label for="Email">Email</label>
+     <input type="email" name="email"   class="form-control" onkeyup="ValidateEmailID(this);"  #email placeholder="Email" required>
+
+     <span class="err" ng-show="myForm.email.$error.required">
+       Gerekli!
+     </span><br/>
+     <span class="err" ng-show="myForm.email.$error.pattern">
+      Lütfen email adresi giriniz...
+     </span>
+
+   </div>
+   <div class="form-group">
+     <label for="Password">Password</label>
+     <input type="text" class="form-control" id="password" placeholder="Password">
+   </div>
+   <button type="submit"        class="btn btn-primary">Submit</button>
+ </form>
+</div>
+<script>
+/*
+function formController($scope) {
+$scope.text = 'mustafazorbaz@hotmail.com';
+$scope.emailFormat = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
+}
+*/
+</script>
